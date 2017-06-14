@@ -1,0 +1,2 @@
+type T0 = C1 num | C2 bool
+((l3: num) => (case (((l3: num) => (((l3: num) => (if false then (if false then (if false then (C1(6)) else (C1(6))) else (if false then (C1(3)) else (C1(8)))) else (if false then (if false then (C1(9)) else (C1(6))) else (if false then (C1(8)) else (C1(8))))))(l3)))(l3)) of | C1(l3) => l3| C2(l3) => (if l3 then 2 else (if l3 then 5 else (rec l3: bool = (!true) in (rec x4: bool = true in 7))))))

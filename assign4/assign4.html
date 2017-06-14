@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+0;256;0c<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One|Julius+Sans+One|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style> 
+      @import "http://www.cs.ucsb.edu/~benh/style.css";
+    </style>
+    <title>Ben Hardekopf CS 162 Assignment 4</title>
+  </head>
+  <body>
+
+    <div id="container2">
+
+      <br/>
+
+      <div id="header">
+	<span style="float: left">
+	  <div class="title"> 
+	    Assignment 4
+	  </div>
+	</span>
+
+	<span style="float: right">
+	  <div class="subtitle">
+	    CS 162 Programming Languages<br/>
+	    University of California, Santa Barbara
+	  </div>
+	</span>
+      </div>
+
+      <br/><br/><br/><br/>
+
+      <div id="content">
+	<div class="heading"> <h2>Due Date</h2> </div>
+
+	Due 11:59:59pm Monday, February 15
+
+	<div class="heading"> <h2>Description</h2> </div>
+
+        <p>
+          The goal of this assignment is to implement parametric polymorphism for FUN, according to the rules in <a href="../../handout5-polyFUN.pdf">handout 5</a>.
+          Once you have a good grasp of the rules, download the code template provided <a href="assign4.zip">here</a>.
+          The template contains the following key files:
+          <ol>
+            <li>
+              <code>syntax.scala</code>: The Scala code implementing
+              the abstract syntax tree for polymorphically-typed FUN, along
+              with a parser.
+            </li>
+            <li>
+              <code>scala-parser-combinators.jar</code>: Scala library
+              code necessary for the aforementioned parser to work.
+            </li>
+            <li>
+              <code>checker.scala</code>: The actual typechecker
+              definition, which you will define.
+            </li>
+            <li>
+              <code>basic_tests</code>: A directory containing simple tests for basic compliance with the handout.
+            </li>
+            <li>
+              <code>big_tests</code>: A directory containing larger tests for testing interaction between different rules.
+            </li>
+            <li>
+              <code>runTests.pl</code>: A <a href="https://www.perl.org/">Perl</a> script which will automatically run some provided tests.
+              The script assumes your code compiled correctly.
+            </li>
+          </ol>
+          
+        <p>
+          For this assignment, you should
+          modify <b>only</b> <code>checker.scala</code>.
+          In <code>checker.scala</code>, there are a multitude of
+          positions marked with <code>??? // FILL ME IN</code>, which
+          you must replace with concrete implementations.  (Recall
+          that <code>???</code> throws an exception at runtime, but at
+          compile time is automatically of whatever type you desire.
+          This will allow you to compile your code incrementally.)
+          Each of the implementations for <code>???</code> should
+          model something from handout 5.
+        </p>
+
+        <p>
+          For this assignment, you will need to
+          put <code>scala-parser-combinators.jar</code> onto your
+          classpath if you are on one of the CSIL machines.  With this
+          in mind, you can compile and run your code like so:
+<pre>
+scalac -cp scala-parser-combinators.jar *.scala
+scala -cp scala-parser-combinators.jar:. Checker basic_tests/good_call1.fun
+</pre>
+        </p>
+
+        <p>
+          For testing your code, you can run the provided <code>runTests.pl</code> script, like so:
+<pre>
+./runTests.pl
+</pre>
+          Before running, make sure your code compiles.
+          Tests which begin with &ldquo;good&rdquo; should typecheck, whereas tests which begin with &ldquo;bad&rdquo; should not typecheck.
+          The script assumes that ill-typed programs emit the string &ldquo;ill-typed&rdquo;, and well-typed programs emit the string &ldquo;well-typed&rdquo;.
+          As such, on error conditions the script may print <code>UNKNOWN</code>, or, worse yet, give incorrect results.
+          Use the script with caution!
+        </p>
+        <div class="heading"><h3>Implementation Hints</h3></div>
+        <p>
+          For ease of debugging, your code should be as close to the
+          typing rules as possible.  Code that deviates from the
+          mathematical definition is generally difficult to reason
+          about, since it becomes less clear where bugs are relative
+          to the typing rules.
+        </p>
+
+        <p>
+          The vast majority of the rules can be copied over from <a href="../assign3.html">assignment 3</a>, without any modification.
+          Two notable exceptions are the rules which implement constructors and pattern matching.
+        </p>
+
+	<div class="heading"> <h2>Deliverables</h2> </div>
+        <p>
+          You must <code>turnin</code> <b>all</b> files required to compile your code.
+          The command below should suffice:
+<pre>
+turnin assign4@cs162 checker.scala
+</pre>
+        </p>
+	<br/><br/>
+      </div>
+    </div>
+    
+  </body> 
+</html>
